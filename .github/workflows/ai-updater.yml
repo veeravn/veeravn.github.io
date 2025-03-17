@@ -1,0 +1,25 @@
+name: AI Website Updater
+
+on:
+  schedule:
+    - cron: "0 12 * * 1"  # Runs every Monday at 12 PM UTC
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  update-website:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Call Azure Function to Generate Content
+      run: |
+        curl -X POST "https://veeravn-ai-updater.azurewebsites.net/api/update_content" \
+             -H "Content-Type: application/json" \
+             -d '{ "action": "update_content", "prompt": "Generate a blog post on AI trends." }'
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add blog/new_post.md
+        git commit -m "AI-generated blog update"
+        git push
