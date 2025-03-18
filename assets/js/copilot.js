@@ -15,11 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
     chatInput.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             let userMessage = chatInput.value.trim();
+            
             if (userMessage) {
                 chatMessages.innerHTML += `<div style="text-align: right; margin: 5px;"><strong>You:</strong> ${userMessage}</div>`;
                 chatInput.value = "";
 
-                fetch("https://veeravnchatbotfunction.azurewebsites.net/api/copilot_function", {
+                fetch("https://veeravnchatbotfunction.azurewebsites.net/api/copilot", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ message: userMessage })
