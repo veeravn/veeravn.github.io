@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 fetch("https://veeravnchatbotfunction.azurewebsites.net/api/copilot", {  // Correct function name
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ message: userMessage })
+                    body: JSON.stringify({ user_id: "portfolio_user", message: userMessage })
                 })
                 .then(response => response.json())
                 .then(data => {
