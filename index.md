@@ -6,6 +6,8 @@ This is the personal portfolio website of Veerav Naidu, a Backend Developer with
 
 ## Features
 
+**AI Agent:** Contains an AI Agent to make adding a new project or work experience easier.
+
 **Responsive Design:** Works seamlessly on all devices.
 
 **About Me Section:** Highlights expertise and technologies.
