@@ -7,7 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 <button id="minimize-chat" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">&minus;</button>
             </div>
             <div id="chat-messages" style="flex-grow: 1; padding: 10px; overflow-y: auto; max-height: 320px;"></div>
-            <input type="text" id="chat-input" placeholder="Ask me anything..." style="border: none; padding: 10px; width: 100%;">
+            <textarea id="chat-input" placeholder="Ask me anything..." rows="3" style="
+                border: none;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                resize: vertical; /* user can drag to grow/shrink height */
+                font-family: inherit;
+                font-size: inherit;
+            "></textarea>
         </div>
         <button id="open-chat" style="position: fixed; bottom: 20px; right: 20px; background: #0078D4; color: white; border: none; border-radius: 50px; padding: 12px 20px; font-size: 16px; cursor: pointer; box-shadow: 0px 4px 6px rgba(0,0,0,0.1);">💬 Chat</button>
     `;
